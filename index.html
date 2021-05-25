@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Yuuki</title>
+  
+  
+  
+  <!--link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/9.10.0/styles/github-gist.min.css"-->
+  
+<link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/9.10.0/styles/github-gist.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+<div class="Shell">
+    <aside class='SideBar'>
+    <section class='avatar' style="background-image: url(/assets/IMG_1454.JPG)">
+        <div class='av-pic' style="background-image: url(/assets/favoricon.JPG)">
+        </div>
+    </section>
+    <section class='menu'>
+        <div>Yuuki</div>
+        
+        <ul>
+          
+            <a href="/" class="Btn">
+              <li>Home</li>
+            </a>  
+          
+            <a href="/categories/" class="Btn">
+              <li>Categories</li>
+            </a>  
+          
+            <a href="/tags/" class="Btn">
+              <li>Tags</li>
+            </a>  
+          
+            <a href="/archives/" class="Btn">
+              <li>Archive</li>
+            </a>  
+          
+        </ul>
+    </section>
+    <section class="media">
+        
+            
+                <a target="_blank" rel="noopener" href="https://github.com/mmk982380365">
+                    <img src="/assets/github.svg" />
+                </a>
+            
+        
+    </section>
+</aside>
+
+    <div class="container">
+        <div data-pager-shell>
+            <ul class="Index">
+  
+  
+    <li>
+      <article class='ListView'>
+    <header class="title">
+      
+        <h1>
+          <a href="/2021/03/15/%E7%AE%80%E6%98%93%E6%8C%87%E5%8D%97/">简易指南</a>
+        </h1>
+      
+      <div class='ListMeta'>
+  <time datetime="2021-03-15T07:11:32.000Z" itemprop="datePublished">
+    2021-03-15
+  </time>
+  
+  | 
+  <ul>
+    
+  <li class="meta-text">
+  { <a href="/tags/Developer/">Developer</a> }
+  </li>
+
+  <li class="meta-text">
+  { <a href="/tags/Git/">Git</a> }
+  </li>
+
+
+  </ul>
+  
+  
+  / 
+  <ul>
+    
+  <li class="meta-text">
+  { <a href="/categories/Git/">Git</a> }
+  </li>
+
+
+  </ul>
+  
+</div>
+
+    </header>
+    <div>
+      
+        <h1 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1. 介绍"></a>1. 介绍</h1><hr>
+<p>Git是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。</p>
+<h1 id="2-安装"><a href="#2-安装" class="headerlink" title="2. 安装"></a>2. 安装</h1><hr>
+<p>Git 目前支持 Linux/Unix、Solaris、Mac和 Windows 平台上运行。</p>
+<p>Git 各平台安装包下载地址为：<a target="_blank" rel="noopener" href="http://git-scm.com/downloads">http://git-scm.com/downloads</a></p>
+<p><strong>Debian/Ubuntu</strong></p>
+<p>Debian/Ubuntu Git 安装命令为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt-get install libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev</span><br><span class="line">apt-get install git-core</span><br></pre></td></tr></table></figure>
+
+<p><strong>Centos/RetHat</strong></p>
+<p>Centos/RedHat Git 安装命令为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel</span><br><span class="line">yum -y install git-core</span><br></pre></td></tr></table></figure>
+
+<p><strong>Windows平台</strong></p>
+<p>在官网下载相应的安装包进行安装。</p>
+<p><strong>Mac平台</strong></p>
+<p>如果安装了Xcode，则默认git已经成功安装，如果没有安装可以去官网下载安装包。</p>
+<p>也可以使用<a target="_blank" rel="noopener" href="http://sourceforge.net/projects/git-osx-installer/">SourceTree</a>进行管理。</p>
+<h1 id="3-配置"><a href="#3-配置" class="headerlink" title="3. 配置"></a>3. 配置</h1><hr>
+<p>要使用git需要进行相应的配置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;username&quot;</span><br><span class="line">git config --global user.email email-address</span><br></pre></td></tr></table></figure>
+
+<h1 id="4-Git工作区、暂存区和版本库"><a href="#4-Git工作区、暂存区和版本库" class="headerlink" title="4. Git工作区、暂存区和版本库"></a>4. Git工作区、暂存区和版本库</h1><hr>
+<p>工作区、暂存区和版本库概念：</p>
+<p>工作区：就是你在电脑里能看到的目录。<br>暂存区：英文叫stage, 或index。一般存放在 “.git目录下” 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。<br>版本库：工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。</p>
+<p>下面这个图展示了工作区、版本库中的暂存区和版本库之间的关系：</p>
+<p><img src="/assets/1352126739_7909-300x157.jpg" alt="1352126739_7909-300x157.jpg"></p>
+<p>图中左侧为工作区，右侧为版本库。在版本库中标记为 “index” 的区域是暂存区（stage, index），标记为 “master” 的是 master 分支所代表的目录树。</p>
+<p>图中我们可以看出此时 “HEAD” 实际是指向 master 分支的一个”游标”。所以图示的命令中出现 HEAD 的地方可以用 master 来替换。</p>
+<p>图中的 objects 标识的区域为 Git 的对象库，实际位于 “.git/objects” 目录下，里面包含了创建的各种对象及内容。</p>
+<p>当对工作区修改（或新增）的文件执行 git add 命令时，暂存区的目录树被更新，同时工作区修改（或新增）的文件内容被写入到对象库中的一个新的对象中，而该对象的ID被记录在暂存区的文件索引中。</p>
+<p>当执行提交操作（git commit）时，暂存区的目录树写到版本库（对象库）中，master 分支会做相应的更新。即 master 指向的目录树就是提交时暂存区的目录树。</p>
+<p>当执行 git reset HEAD 命令时，暂存区的目录树会被重写，被 master 分支指向的目录树所替换，但是工作区不受影响。</p>
+<p>当执行 git rm –cached <file> 命令时，会直接从暂存区删除文件，工作区则不做出改变。</p>
+<p>当执行 git checkout . 或者 git checkout – <file> 命令时，会用暂存区全部或指定的文件替换工作区的文件。这个操作很危险，会清除工作区中未添加到暂存区的改动。</p>
+<p>当执行 git checkout HEAD . 或者 git checkout HEAD <file> 命令时，会用 HEAD 指向的 master 分支中的全部或者部分文件替换暂存区和以及工作区中的文件。这个命令也是极具危险性的，因为不但会清除工作区中未提交的改动，也会清除暂存区中未提交的改动。</p>
+<h1 id="5-基本命令"><a href="#5-基本命令" class="headerlink" title="5. 基本命令"></a>5. 基本命令</h1><hr>
+<p><strong>创建仓库</strong></p>
+<p>Git 使用 git init 命令来初始化一个 Git 仓库，Git 的很多命令都需要在 Git 的仓库中运行，所以 git init 是使用 Git 的第一个命令。</p>
+<p>在执行完成 git init 命令后，Git 仓库会生成一个 .git 目录，该目录包含了资源的所有元数据，其他的项目目录保持不变。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+
+<p>该命令执行完后会在当前目录生成一个 .git 目录。</p>
+<p><strong>克隆仓库</strong></p>
+<p>我们使用 git clone 从现有 Git 仓库中拷贝项目（类似 svn checkout）。</p>
+<p>克隆仓库的命令格式为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone repo</span><br></pre></td></tr></table></figure>
+
+<p>如果我们需要克隆到指定的目录，可以使用以下命令格式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone repo directory</span><br></pre></td></tr></table></figure>
+
+<p><strong>添加与提交</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add</span><br></pre></td></tr></table></figure>
+
+<p>git add 命令可将该文件添加到暂存区。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;提交信息&quot;</span><br></pre></td></tr></table></figure>
+
+<p>该命令会将暂存区的内容添加到仓库中，-m后的内容为该次提交的描述信息。</p>
+<p><strong>分支</strong></p>
+<p>分支是用来将特性开发绝缘开来的。其中当创建仓库时，默认会创建名为master的分支，该分支叫做主分支。我们可以自己创建新的分支，并在该分支下工作，完成后再合并至主分支。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b 分支名</span><br></pre></td></tr></table></figure>
+
+<p>该命令会传建一个名为分支名的分支，并切换至该分支</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout 分支名</span><br></pre></td></tr></table></figure>
+
+<p>该命令会切换至该分支，切换时要保证暂存区是没有内容的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d 分支名</span><br></pre></td></tr></table></figure>
+
+<p>该命令会删除该分支。</p>
+<p><strong>推送改动</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin server</span><br></pre></td></tr></table></figure>
+
+<p>在提交改动到远程仓库时，需要添加服务器地址，比如上面的指令表示添加一个名为origin的服务器，地址为server。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+
+<p>当提交过改动后，我们可以执行该指令将仓库推送到远程仓库，其中origin表示当前仓库设置的远程服务器，master表示推送的分支。</p>
+<p><strong>更新与合并</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge 分支</span><br></pre></td></tr></table></figure>
+
+<p>该命令会将该分支合并至当前分支，当合并时会有可能导致冲突(conflicts)。这双我们需要我们自己解决这些冲突。出现冲突的文件中会出现冲突标记，需要我们自己去解决。修改完成后需要执行git add fiename命令提交改动。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff branch1 branch2</span><br></pre></td></tr></table></figure>
+
+<p>我们可以使用该命令查看文件内容的不同信息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull </span><br></pre></td></tr></table></figure>
+
+<p>该命令会在当前工作目录中获取(fetch)并合并(merge)远端改动。此时也会有可能导致冲突。</p>
+<p><strong>替换本地改动</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -- 文件名</span><br></pre></td></tr></table></figure>
+
+<p>此命令会使用HEAD中最新的内容替换工作目录中的文件，已添加到暂存区的改动，以及新文件都不受影响。</p>
+<p>如果想丢弃所有的本地改动与提交，可以在服务器上获取最新版本并将本地主分支指向它。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin</span><br><span class="line">git reset --hard origin&#x2F;master</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+</article>
+
+    </li>
+  
+    <li>
+      <article class='ListView'>
+    <header class="title">
+      
+        <h1>
+          <a href="/2021/03/15/iOS%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%B2%99%E7%9B%92%E6%9C%BA%E5%88%B6/">iOS系统的沙盒机制</a>
+        </h1>
+      
+      <div class='ListMeta'>
+  <time datetime="2021-03-15T06:13:54.000Z" itemprop="datePublished">
+    2021-03-15
+  </time>
+  
+  | 
+  <ul>
+    
+  <li class="meta-text">
+  { <a href="/tags/iOS/">iOS</a> }
+  </li>
+
+  <li class="meta-text">
+  { <a href="/tags/Developer/">Developer</a> }
+  </li>
+
+
+  </ul>
+  
+  
+  / 
+  <ul>
+    
+  <li class="meta-text">
+  { <a href="/categories/iOS/">iOS</a> }
+  </li>
+
+
+  </ul>
+  
+</div>
+
+    </header>
+    <div>
+      
+        <h1 id="一、iOS系统的沙盒机制"><a href="#一、iOS系统的沙盒机制" class="headerlink" title="一、iOS系统的沙盒机制"></a>一、iOS系统的沙盒机制</h1><hr>
+<h2 id="沙盒机制介绍"><a href="#沙盒机制介绍" class="headerlink" title="沙盒机制介绍"></a>沙盒机制介绍</h2><p>沙盒机制是iOS系统中的一种安全体系。每个iOS程序都有一个独立的文件系统（存储空间），而且只能在对应的文件系统中进行操作，此区域被称之为沙盒。所有非代码文件都保存在此，如属性文件plist、文本文件、图像、图标、媒体资源等。</p>
+<p>并且不像安卓系统，iOS系统比较封闭，也没有提供内存卡扩展的功能，没有开放文件管理，所以在手机上是看不到文件目录的。</p>
+<h2 id="沙盒机制的一些规则"><a href="#沙盒机制的一些规则" class="headerlink" title="沙盒机制的一些规则"></a>沙盒机制的一些规则</h2><p>每个应用程序都有自己的存储空间<br>应用程序不能翻过自己的围墙去访问其他应用的存储空间内容<br>应用程序请求的数据需要通过权限检测,若不符合条件,则不会被放行<br>如果需要访问其他某些资源,比如相册、通讯录、麦克风、地理位置等，需要经过用户同意才可以获取。<br>每次应用程序重新开启时目录名称会改变。<br>沙盒目录的结构</p>
+<p>主要包含4个目录 MyApp.app、Documents、Library、tmp</p>
+<p>一个应用的沙盒目录结构</p>
+<p><img src="/assets/ios_app_layout_2x.png" alt="s"></p>
+<h3 id="MyApp-app"><a href="#MyApp-app" class="headerlink" title="MyApp.app"></a>MyApp.app</h3><p>该目录存放应用本身的数据，包括资源文件和可执行文件。该目录是只读的，如果改变这个目录，将会改变应用程序的签名，应用将会无法启动。不会被iTunes和iCloud同步。</p>
+<h3 id="Documents"><a href="#Documents" class="headerlink" title="Documents"></a>Documents</h3><p>该目录主要存放用户产生的文件，该目录会被iTunes和iCloud同步。</p>
+<h3 id="Library"><a href="#Library" class="headerlink" title="Library"></a>Library</h3><p>苹果建议用来存放默认设置或其他状态信息，该目录除Caches子目录以外会被iTunes和iCloud同步。</p>
+<h3 id="Library-Caches"><a href="#Library-Caches" class="headerlink" title="Library/Caches"></a>Library/Caches</h3><p>主要存放缓存文件，比如音乐缓存，图片缓存等，用户使用过程中的缓存都可以保存在这个目录中，可用于保存可再生文件，应用程序也需要负责删除这些文件，该目录不会被iTunes和iCloud同步。</p>
+<h3 id="Library-Preferences"><a href="#Library-Preferences" class="headerlink" title="Library/Preferences"></a>Library/Preferences</h3><p>存放应用偏好设置文件，该目录会被iTunes和iCloud同步。</p>
+<h3 id="tmp"><a href="#tmp" class="headerlink" title="tmp"></a>tmp</h3><p>存放各种临时文件，保存应用再次启动时不需要的文件。当应用不再需要这些文件时应该主动将其删除。该目录的文件会被系统清理，比如系统磁盘空间不足的时候。该目录不会被iTunes和iCloud同步。</p>
+<h1 id="二、获取各种文件目录的路径"><a href="#二、获取各种文件目录的路径" class="headerlink" title="二、获取各种文件目录的路径"></a>二、获取各种文件目录的路径</h1><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#x2F;&#x2F; 获取沙盒主目录路径</span><br><span class="line">NSString *homeDir &#x3D; NSHomeDirectory(); </span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 获取Documents目录路径</span><br><span class="line">NSString *docDir &#x3D; [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 获取Library的目录路径</span><br><span class="line">NSString *libDir &#x3D; [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) lastObject];</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 获取Caches目录路径</span><br><span class="line">NSString *cachesDir &#x3D; [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 获取tmp目录路径</span><br><span class="line">NSString *tmpDir &#x3D;  NSTemporaryDirectory();</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;应用程序程序包的路径</span><br><span class="line">[[NSBundle mainBundle] bundlePath]</span><br></pre></td></tr></table></figure>
+
+<h1 id="三、NSSearchPathForDirectoriesInDomains"><a href="#三、NSSearchPathForDirectoriesInDomains" class="headerlink" title="三、NSSearchPathForDirectoriesInDomains"></a>三、NSSearchPathForDirectoriesInDomains</h1><hr>
+<p>方法用于查找目录，返回指定范围内的指定名称的目录的路径集合。有三个参数：</p>
+<h2 id="directory"><a href="#directory" class="headerlink" title="directory"></a>directory</h2><p><code>NSSearchPathDirectory</code>类型的enum值，表明我们要搜索的目录名称，比如这里用<code>NSDocumentDirectory</code>表明我们要搜索的是<code>Documents</code>目录。如果我们将其换成<code>NSCachesDirectory</code>就表示我们搜索的是<code>Library/Caches</code>目录。</p>
+<h2 id="domainMask"><a href="#domainMask" class="headerlink" title="domainMask"></a>domainMask</h2><p><code>NSSearchPathDomainMask</code>类型的enum值，指定搜索范围，这里的<code>NSUserDomainMask</code>表示搜索的范围限制于当前应用的沙盒目录。还可以写成<code>NSLocalDomainMask</code>（表示/Library）、<code>NSNetworkDomainMask</code>（表示/Network）等。</p>
+<h2 id="expandTilde"><a href="#expandTilde" class="headerlink" title="expandTilde"></a>expandTilde</h2><p>BOOL值，表示是否展开波浪线。我们知道在iOS中的全写形式是<code>/User/userName</code>，该值为<code>YES</code>即表示写成全写形式，为NO就表示直接写成“~”。</p>
+<h1 id="引用链接"><a href="#引用链接" class="headerlink" title="引用链接"></a>引用链接</h1><hr>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/dd3f120eb249">iOS 沙盒目录结构及正确使用</a></p>
+<p><a target="_blank" rel="noopener" href="https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html">File System Basics</a></p>
+<p><a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/foundation/1414224-nssearchpathfordirectoriesindoma">Function NSSearchPathForDirectoriesInDomains(::_:)</a></p>
+
+      
+    </div>
+</article>
+
+    </li>
+  
+</ul>
+
+
+            <footer>
+    <div>© 2021 - Yuuki </div>
+    <div>
+        <span>
+            Powered by <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a>
+        </span>
+        ,
+        <span>
+            Theme - <a target="_blank" rel="noopener" href="https://github.com/nameoverflow/hexo-theme-icalm">Icalm</a>
+        </span>
+    </div>
+</footer>
+
+        </div>
+    </div>
+</div>
+
+<script src="/js/pager/dist/singlepager.js"></script>
+
+<script>
+var sp = new Pager('data-pager-shell')
+
+</script>
+</body>
+</html>
